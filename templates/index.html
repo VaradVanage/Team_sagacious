@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block content %}
+
+
+<h2 style="color: rgb(39, 149, 208) ; font-family: Georgia, 'Times New Roman', Times, serif;" > CAPTURE ! </h2>
+<h2 style="color: rgb(112, 186, 252); font-family: Georgia, 'Times New Roman', Times, serif; margin-left: 10%;"> IDENTIFY !</h2>
+<h2 style="color: rgb(0, 162, 255); font-family: Georgia, 'Times New Roman', Times, serif; margin-left: 20%;"> TREAT !</h2>
+<h4 style="font-family:   Georgia, 'Times New Roman', Times, serif;">Instant Disease Detection And Treatment Advise</h4>
+<div>
+    
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose.....
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+    <div class="u-size-50 u-layout-cell u-container-style ui-draggable ui-droppable u-block-3941-35" data-cell-id="10" data-column-id="6" style="min-height: 333px;" data-block-type="Cell"><div class="u-container-layout u-block-3941-36" style="padding-top: 30px; padding-bottom: 30px; padding-left: 30px; padding-right: 30px" data-container-layout-dom="16"><img style="width: 400px; height: 400px; margin: 0px auto 0px 0px;" class="u-image u-image-circle u-preserve-proportions u-block-3941-37" src="static/images/AgroFront_page.jpg" alt="" data-image-width="1600" data-image-height="1600" data-block="80"><div style="width: 257px; margin: -229px 0px 0px auto; min-height: 294px; height: auto;" class="u-container-style u-group u-shape-rectangle u-block-3941-38" data-block="81">
+        <div class="u-container-layout u-block-3941-39" style="padding: 30px 14px 30px 30px;" data-container-layout-dom="17"><h4 style="margin: 0px 0px 0px 13px;" class="u-text u-block-3941-40" data-block="82">CAPTURE IDENTIFY TREAT</h4><h5 style="margin: 15px 16px 0px 13px; font-size: 1rem; background-image: none; font-weight: 700;" class="u-custom-font u-text u-text-font u-text-palette-2-base u-block-3941-41" data-block="83">Identify Your Plant's problem with a snap Of A photo</h5><p style="margin: 21px 16px 0px 13px; font-size: 0.875rem; font-style: italic;" class="u-text u-block-3941-42" data-block="84">Instant Disease Detection And Treatment Advise </p><div style="height: 38px; min-height: 16px; margin: 17px 72px 0px 15px; width: 154px; min-width: 88px;" class="u-social-icons u-spacing-20 u-block-3941-43" data-block="85">  
+    </div></div>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+    
+    <h3 id="result" style="color:blue;">
+        <span> </span>
+    </h3>
+    <h4 id="information" style="color: black;" >
+        <span> </span>
+    </h4>
+   
+</div>
+{% endblock %}
