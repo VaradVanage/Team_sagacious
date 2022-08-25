@@ -1,48 +1,35 @@
 import os
 import numpy as np
 import cv2
-
 # Keras
 from tensorflow.keras.models import load_model
-
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
-
 #from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 from matplotlib.pyplot import pause
 from googlesearch import search
 # Define a flask app
 app = Flask(__name__)
-
 # Model saved with Keras model.save()
 MODEL_PATH = 'models\model_inception.h5'
-
 # Load your trained model
 model = load_model(MODEL_PATH)
-
 #model._make_predict_function()    
 # 
 print()
 print('Invoking model...')
 print()
 print('Model loaded Successful. Start serving......')
-
-
 def model_predict(img_path, model):
-    
     #update by ViPS
     img = cv2.imread(img_path)
     new_arr = cv2.resize(img,(224,224))
     new_arr = np.array(new_arr/255)
     new_arr = new_arr.reshape(-1, 224,224, 3)
-    
-
-    
     preds = model.predict(new_arr)
     return preds
-
-
+    
 @app.route('/', methods=['GET'])
 def index():
     # Main page
